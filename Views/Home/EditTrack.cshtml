@@ -1,0 +1,76 @@
+@model project.Track
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Track</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="POST" asp-action="EditTrack">
+            
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="TrackID" class="control-label"></label>
+                <input asp-for="TrackID" class="form-control" />
+                <span asp-validation-for="TrackID" class="text-danger"></span>
+            </div>
+                        <div class="form-group">
+                <label asp-for="AlbumID" class="control-label"></label>
+                <input asp-for="AlbumID" class="form-control" />
+                <span asp-validation-for="AlbumID" class="text-danger" ></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="MediaTypeID" class="control-label"></label>
+                <input asp-for="MediaTypeID" class="form-control" />
+                <span asp-validation-for="MediaTypeID" class="text-danger" ></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="GenreID" class="control-label"></label>
+                <input asp-for="GenreID" class="form-control" />
+                <span asp-validation-for="GenreID" class="text-danger" ></span>
+            </div>
+
+             <div class="form-group">
+                <label asp-for="Composer" class="control-label"></label>
+                <input asp-for="Composer" class="form-control" />
+                <span asp-validation-for="Composer" class="text-danger" ></span>
+            </div>
+             <div class="form-group">
+                <label asp-for="Milliseconds" class="control-label"></label>
+                <input asp-for="Milliseconds" class="form-control" />
+                <span asp-validation-for="Milliseconds" class="text-danger" ></span>
+            </div>
+             <div class="form-group">
+                <label asp-for="Bytes" class="control-label"></label>
+                <input asp-for="Bytes" class="form-control" />
+                <span asp-validation-for="Bytes" class="text-danger" ></span>
+            </div>
+             <div class="form-group">
+                <label asp-for="UnitPrice" class="control-label"></label>
+                <input asp-for="UnitPrice" class="form-control" />
+                <span asp-validation-for="UnitPrice" class="text-danger" ></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+

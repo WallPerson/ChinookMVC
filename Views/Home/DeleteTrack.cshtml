@@ -1,0 +1,26 @@
+@model project.Track
+
+@{
+    ViewData["Name"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Track</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+             <label asp-for="Name" class="control-label">Title: <p>@Model.Name</p></label>
+            
+        </dt>
+        
+    </dl>
+    
+    <form asp-action="DeleteTrack">
+        <input type="hidden" asp-for="TrackID" />
+        <input type="submit" value="Delete" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete Track : @Model.Name')"> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

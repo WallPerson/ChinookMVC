@@ -1,0 +1,101 @@
+﻿
+
+
+@{
+    ViewData["Title"] = "Home Page";
+    int count =0;
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    
+
+<input class="form-control" id="myInput" type="text" placeholder="Search..">
+<div class="table-responsive">
+<table class="display" id="newTable">
+  <thead>
+    <tr>
+      <th scope="col">Album ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Artist ID</th>
+      <th scope="col">Options</th>
+    </tr>
+  </thead>
+
+
+  <tbody id="myTable">
+
+
+      @foreach (var item in @Model.Albums)
+    {
+        
+      count++;
+    
+
+
+
+
+
+
+
+      
+                 <tr>
+      
+      <td>@item.AlbumID</td>
+        <td>@item.Title</td>
+        <td>@item.ArtistID</td>
+        
+        <td>
+                <a asp-action="Edit" asp-route-id="@item.AlbumID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.AlbumID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.AlbumID">Delete</a>
+            </td>
+
+</tr>
+
+
+
+   
+
+
+
+
+
+    }
+
+
+      @foreach (var item in @Model.Tracks)
+    {
+   /*               <tr>
+      
+      <td>@item.TrackID</td>
+        <td>@item.Name</td>
+        <td>@item.Composer</td>
+    </tr>
+*/
+ 
+    }
+
+    
+  </tbody>
+</table>
+
+
+
+
+
+</div>
+</div>
+
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>

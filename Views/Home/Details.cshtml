@@ -1,0 +1,104 @@
+@model project.Detail
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+   <div class="row">
+    <div class="col-md-4">
+<form method="POST" asp-action="Details">
+            
+         
+       <div>  
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+                        <div class="form-group">
+                <label asp-for="AlbumID" class="control-label"></label>
+                <input asp-for="AlbumID" class="form-control" name="AlID" />
+                <span asp-validation-for="AlbumID" class="text-danger" ></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ArtistID" class="control-label"></label>
+                <input asp-for="ArtistID" class="form-control" />
+                <span asp-validation-for="ArtistID" class="text-danger" ></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label">Artist Name</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger" ></span>
+                    <a asp-action="EditArtist" asp-route-id="@Model.ArtistID">| Edit Artist |</a>
+            </div>
+            <div class="form-group">
+                <input asp-action="Index" type="submit" value="Back to List" class="btn btn-primary" />
+            </div>
+        </form>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.AlbumID">| Edit Album |</a> 
+    
+</div>
+</div>   
+</div>
+</div>   
+<div class="table-responsive">
+<table class="display" id="newTable">
+  <thead>
+    <tr>
+      <th scope="col">Track ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Artist</th>
+      <th scope="col">Options</th>
+    </tr>
+  </thead>
+
+
+  <tbody id="myTable">
+
+
+      @foreach (var item in @Model.AlbumTracks)
+    {
+        
+      
+    
+
+
+
+
+
+
+
+      if(item.AlbumID == Model.AlbumID)
+      {
+                 <tr>
+      
+      <td>@item.TrackID</td>
+        <td>@item.Name</td>
+        <td>@Model.Name</td>
+        <td>
+                <a asp-action="EditTrack" asp-route-id="@item.TrackID">Edit</a> |
+                <a asp-action="TrackDetails" asp-route-id="@item.TrackID">Details</a> |
+                <a asp-action="DeleteTrack" asp-route-id="@item.TrackID">Delete</a>
+            </td>
+
+</tr>
+      }
+
+
+    }
+<a asp-action="CreateTrack" asp-route-id="@Model.AlbumID">| Add Track |</a>
+  </tbody>
+</table>
+
+    </div>
+
+</div>
+
+
+
+
+</div>
