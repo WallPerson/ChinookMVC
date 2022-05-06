@@ -1,0 +1,5 @@
+D:\code\DbApps\Context\obj\Debug\net5.0\Context.csprojAssemblyReference.cache
+D:\code\DbApps\Context\obj\Debug\net5.0\Context.GeneratedMSBuildEditorConfig.editorconfig
+D:\code\DbApps\Context\obj\Debug\net5.0\Context.AssemblyInfoInputs.cache
+D:\code\DbApps\Context\obj\Debug\net5.0\Context.AssemblyInfo.cs
+D:\code\DbApps\Context\obj\Debug\net5.0\Context.csproj.CoreCompileInputs.cache
